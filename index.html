@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <header><h2>C Docs</h2></header>
+      <a href="#C_Header_File" class="nav-link">C Header File</a>
+      <a href="#C_Data_Types" class="nav-link">C Data Types</a>
+      <a href="#C_Variables" class="nav-link">C Variables</a>
+      <a href="#C_Input_and_Output_(I/O)" class="nav-link"
+        >C Input and Output (I/O)</a
+      >
+      <a href="#C_Program_Structure" class="nav-link">C Program Structure</a>
+    </nav>
+    <main id="main-doc">
+      <div class="container_gtranslate">
+        Terjemahkan halaman ini:
+        <div id="google_translate_element"></div>
+      </div>
+      <!-- Header File -->
+      <section class="main-section" id="C_Header_File">
+        <header><h1>C Header File</h1></header>
+        <p>
+          Header files are helping file of your C program which holds the
+          definitions of various functions and their associated variables that
+          needs to be imported into your C program with the help of
+          pre-processor #include statement. All the header file have a '.h' an
+          extension that contains C function declaration and macro definitions.
+          In other words, the header files can be requested using the
+          preprocessor directive #include. The default header file that comes
+          with the C compiler is the stdio.h.
+        </p>
+        <p>
+          Including a header file means that using the content of header file in
+          your source program. A straightforward practice while programming in C
+          or C++ programs is that you can keep every macro, global variables,
+          constants, and other function prototypes in the header files. The
+          basic syntax of using these header files is:
+        </p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+#include< filename ></pre
+          >
+        </code>
+        <p>or</p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+#include "file"
+</pre
+          >
+        </code>
+        <p>e.g</p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+          
+     #include< stdio.h >
+
+       int x;
+       #include "karl.h"
+       int main () 
+       {
+          printf("Program done");
+             return 0;
+       }
+        </pre
+          >
+        </code>
+        <p>
+          This kind of file inclusion is implemented for including system
+          oriented header files. This technique (with angular braces) searches
+          for your file-name in the standard list of system directories or
+          within the compiler's directory of header files. Whereas, the second
+          kind of header file is used for user-defined header files or other
+          external files for your program. This technique is used to search for
+          the file(s) within the directory that contains the current file.
+        </p>
+      </section>
+
+      <!-- Data Types -->
+      <section class="main-section" id="C_Data_Types">
+        <header><h1>C Data Types</h1></header>
+        <p>
+          The data-type in a programming language is the collection of data with
+          values having fixed meaning as well as characteristics. Some of them
+          are an integer, floating point, character, etc. Usually, programming
+          languages specify the range values for given data-type.
+        </p>
+        <h4>C Data Types are used to</h4>
+        <ul>
+          <li>Identify the type of a variable when it declared.</li>
+          <li>Identify the type of the return value of a function.</li>
+          <li>Identify the type of a parameter expected by a function.</li>
+        </ul>
+        <h3>Primary Data Types</h3>
+        <p>Every C compiler supports five primary data types:</p>
+        <table class="table" border="1" cellspacing="4" cellpadding="4">
+          <tbody>
+            <tr>
+              <td width="125" class="label">void</td>
+              <td>
+                As the name suggests, it holds no value and is generally used
+                for specifying the type of function or what it returns. If the
+                function has a void type, it means that the function will not
+                return any value.
+              </td>
+            </tr>
+            <tr>
+              <td class="label">int</td>
+              <td>Used to denote an integer type.</td>
+            </tr>
+            <tr>
+              <td class="label">char</td>
+              <td>Used to denote a character type.</td>
+            </tr>
+            <tr>
+              <td class="label">float, double</td>
+              <td>Used to denote a floating point type.</td>
+            </tr>
+            <tr>
+              <td class="label">int *, float *, char *</td>
+              <td>Used to denote a pointer type.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Three more data types have been added in C99:</h4>
+        <ul>
+          <li>_Bool</li>
+          <li>_Complex</li>
+          <li>_Imaginary</li>
+        </ul>
+        <h4>Decalration of Primary Data Types With VAriable Name</h4>
+        <p><i>Example:</i></p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+          
+  int age;
+  char letters;
+  foat hight,width;
+          </pre>
+        </code>
+        <h3>Derived Data Types</h3>
+        <p>C supports three derived data types:</p>
+        <table class="table" border="1" cellspacing="4" cellpadding="4">
+          <tbody>
+            <tr>
+              <th style="width: 150px">Data Types</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td class="label">Arrays</td>
+              <td>
+                Arrays are sequences of data items having homogeneous values.
+                They have adjacent memory locations to store values.
+              </td>
+            </tr>
+            <tr>
+              <td class="label">References</td>
+              <td>
+                Function pointers allow referencing functions with a particular
+                signature.
+              </td>
+            </tr>
+            <tr>
+              <td class="label">Pointers</td>
+              <td>
+                These are powerful C features which are used to access the
+                memory and deal with their addresses.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>User Defined Data Types</h3>
+        <p>
+          C allows the feature called type definition which allows programmers
+          to define their identifier that would represent an existing data type.
+          There are three such types:
+        </p>
+        <table class="table" border="1" cellspacing="4" cellpadding="4">
+          <tbody>
+            <tr>
+              <th style="width: 150px">Data Types</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td class="label">Structure</td>
+              <td>
+                It is a package of variables of different types under a single
+                name. This is done to handle data efficiently. "struct" keyword
+                is used to define a structure.
+              </td>
+            </tr>
+            <tr>
+              <td class="label">Union</td>
+              <td>
+                These allow storing various data types in the same memory
+                location. Programmers can define a union with different members,
+                but only a single member can contain a value at a given time. It
+                is used for
+              </td>
+            </tr>
+            <tr>
+              <td class="label">Enum</td>
+              <td>
+                Enumeration is a special data type that consists of integral
+                constants, and each of them is assigned with a specific name.
+                "enum" keyword is used to define the enumerated data type.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Data Types and Variable Declaration in C</h3>
+        <p><i>Example:</i></p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+
+  #include < stdio.h >
+    int main()
+    {
+        int a = 4000; // positive integer data type
+        float b = 5.2324; // float data type
+        char c = 'Z'; // char data type
+        long d = 41657; // long positive integer data type
+        long e = -21556; // long -ve integer data type
+        int f = -185; // -ve integer data type
+        short g = 130; // short +ve integer data type
+        short h = -130; // short -ve integer data type
+        double i = 4.1234567890; // double float data type
+        float j = -3.55; // float data type
+    }
+          </pre>
+        </code>
+        <p><i>Example:</i></p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+
+    #include < stdio.h >
+      #include < limits.h >
+      int main()
+      {
+          printf("Storage size for int is: %d \n", sizeof(int));
+          printf("Storage size for char is: %d \n", sizeof(char));
+          return 0; 
+      }
+        </pre
+          >
+        </code>
+        <p><i>Program Output</i></p>
+        <img src="output1.jpg" alt="program output" />
+      </section>
+
+      <!-- VAriable -->
+      <section class="main-section" id="C_Variables">
+        <header><h1>C Variables</h1></header>
+        <p>
+          Variables are memory locations(storage area) in the C programming
+          language. The primary purpose of variables is to store data in memory
+          for later use. Unlike constants which do not change during the program
+          execution, variables value may change during execution. If you declare
+          a variable in C, that means you are asking the operating system to
+          reserve a piece of memory with that variable name.
+        </p>
+        <h3>Variable Declaration in C</h3>
+        <p><u>Syntax:</u></p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+  type variable_name;</pre
+          >
+        </code>
+        <p>or</p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+  type variable_name, variable_name, variable_name;</pre
+          >
+        </code>
+        <h3>Variable Declaration and Initialization</h3>
+        <p><u>Example:</u></p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+
+  int    width, height=5;
+  char   letter='A';
+  float  age, area;
+  double d;
+
+  /* actual initialization */width = 10;
+  age = 26.5;
+        </pre
+          >
+        </code>
+        <h3>Variable Assignment</h3>
+        <p>
+          A variable assignment is a process of assigning a value to a variable.
+        </p>
+        <p><u>Example:</u></p>
+        <code>
+          <pre>
+  int width = 60;
+  int age = 31;</pre
+          >
+        </code>
+        <h4>There are some rules on choosing variable names</h4>
+        <ul>
+          <li>
+            A variable name can consist of Capital letters A-Z, lowercase
+            letters a-z, digits 0-9, and the underscore character.
+          </li>
+          <li>The first character must be a letter or underscore.</li>
+          <li>Blank spaces cannot be used in variable names.</li>
+          <li>Special characters like #, $ are not allowed.</li>
+          <li>C keywords cannot be used as variable names.</li>
+          <li>Variable names are case sensitive.</li>
+          <li>Values of the variables can be numeric or alphabetic.</li>
+          <li>Variable type can be char, int, float, double, or void.</li>
+        </ul>
+        <h4>C Program to Print Value of Variable</h4>
+        <p><u>Example:</u></p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+    #include< stdio.h  >
+
+    void main()
+      {
+       /* c program to print value of a variable */    int age = 33;
+       printf("I am %d years old.\n", age);
+      }</pre
+          >
+        </code>
+        <p><u>Program Output:</u></p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+I am 33 years old.</pre
+          >
+        </code>
+      </section>
+
+      <!-- Input and Output (i/o) -->
+      <section class="main-section" id="C_Input_and_Output_(I/O)">
+        <header><h1>C Input and Output (I/O)</h1></header>
+        <p>
+          As we all know the three essential functions of a computer are
+          reading, processing and writing data. Majority of the programs take
+          data as input, and then after processing the processed data is being
+          displayed which is called information. In C programming you can use
+          scanf() and printf() predefined function to read and print data.
+        </p>
+        <p><u>Example:</u></p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+    #include< stdio.h >
+
+      void main()
+      {
+      int a,b,c;
+       printf("Please enter any two numbers: \n");
+      scanf("%d %d", &a, &b);
+      c =  a + b;
+      printf("The addition of two number is: %d", c);
+      }
+        </pre
+          >
+        </code>
+        <p><u>Output</u></p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+    Please enter any two numbers:
+    12
+    3
+    The addition of two number is:15</pre
+          >
+        </code>
+        <p>
+          The above program scanf() is used to take input from the user, and
+          respectively printf() is used to display output result on the screen.
+        </p>
+        <h3>Managing Input/Output</h3>
+        <p>
+          I/O operations are useful for a program to interact with users. stdlib
+          is the standard C library for input-output operations. While dealing
+          with input-output operations in C, two important streams play their
+          role. These are:
+        </p>
+        <ol>
+          <li>Standard Input (stdin)</li>
+          <li>Standard Output (stdout)</li>
+        </ol>
+        <p>
+          Standard input or stdin is used for taking input from devices such as
+          the keyboard as a data stream. Standard output or stdout is used for
+          giving output to a device such as a monitor. For using I/O
+          functionality, programmers must include stdio header-file within the
+          program.
+        </p>
+        <h3>Reading Character in C</h3>
+        <p>
+          The easiest and simplest of all I/O operations are taking a character
+          as input by reading that character from standard input (keyboard).
+          getchar() function can be used to read a single character. This
+          function is alternate to scanf() function.
+        </p>
+        <p><u>Sytax:</u></p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+var_name = getchar();</pre
+          >
+        </code>
+        <p><u>Example:</u></p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+    #include< stdio.h >
+
+    void main()
+    {
+    char title;
+    title = getchar();
+    }</pre
+          >
+        </code>
+        <p>
+          There is another function to do that task for files: getc which is
+          used to accept a character from standard input.
+        </p>
+        <p><u>Sytax:</u></p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+int getc(FILE *stream);</pre
+          >
+        </code>
+        <h3>Writing Character in C</h3>
+        <p>
+          Similar to getchar() there is another function which is used to write
+          characters, but one at a time.
+        </p>
+        <p><u>Syntax:</u></p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+putchar(var_name);</pre
+          >
+        </code>
+        <p><u>Example:</u></p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+    #include< stdio.h >
+
+      void main()
+      {
+      char result = 'P';
+      putchar(result);
+      putchar('\n');
+      }</pre
+          >
+        </code>
+        <p>
+          Similarly, there is another function putc which is used for sending a
+          single character to the standard output.
+        </p>
+        <p><u>Sytax:</u></p>
+        <code>
+          <pre
+            style="
+              background-color: rgb(233, 233, 233);
+              box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+              border: 0.5px solid rgba(0, 0, 0, 0.1);
+            "
+          >
+int putc(int c, FILE *stream);</pre
+          >
+        </code>
+      </section>
+
+      <!-- Program Structure -->
+      <section class="main-section" id="C_Program_Structure">
+        <header><h1>C Program Structure</h1></header>
+        <p>
+          This lesson has detailed description of C program structure. It's
+          essential for you before proceeding to learn more advanced lessons of
+          C programming.
+        </p>
+        <h3>Sample Code of C "Hello World" Program</h3>
+        <p><u>Example:</u></p>
+        <code><pre style="
+          background-color: rgb(233, 233, 233);
+          box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+          border: 0.5px solid rgba(0, 0, 0, 0.1);
+        ">
+          /* Author: www.w3schools.in
+  Date: 2018-04-28
+  Description:
+  Writes the words "Hello, World!" on the screen */  
+  #include<stdio.h>
+
+  int main()
+  {
+    printf("Hello, World!\n");
+    return 0;
+  } 
+        </pre></code>
+        <p>Or in different way</p>
+        <code><pre style="
+          background-color: rgb(233, 233, 233);
+          box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+          border: 0.5px solid rgba(0, 0, 0, 0.1);
+        ">
+          /* Author: www.w3schools.in
+  Date: 2013-11-15
+  Description:
+  Writes the words "Hello, World!" on the screen */
+  #include<stdio.h>
+  #include<conio.h> 
+
+  void main()
+  {
+    printf("Hello, World!\n");
+    return;
+  }</pre></code>
+  <h3>Basic Structure of C Program</h3>
+  <p>The example discussed above illustrates how a simple C program looks like and how the program segment works. A C program may contain one or more sections which are figured above.
+      
+    The Documentation section usually contains the collection of comment lines giving the name of the program, author's or programmer's name and few other details. The second part is the link-section which instructs the compiler to connect to the various functions from the system library. The Definition section describes all the symbolic-constants. The global declaration section is used to define those variables that are used globally within the entire program and is used in more than one function. This section also declares all the user-defined functions. Then comes the main(). All C programs must have a main() which contains two parts:</p>
+  <ul>
+    <li>Declaration part</li>
+    <li>Execution part</li>
+  </ul>
+  <p>The declaration part is used to declare all variables that will be used within the program. There needs to be at least one statement in the executable part, and these two parts are declared within the opening and closing curly braces of the main(). The execution of the program begins at the opening brace '{' and ends with the closing brace '}'. Also, it has to be noted that all the statements of these two parts need to be terminated with a semi-colon.
+
+    The sub-program section deals with all user-defined functions that are called from the main(). These user-defined functions are declared and usually defined after the main() function.</p>
+      </section>
+    </main>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "id" },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+  </body>
+</html>
